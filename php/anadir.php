@@ -7,11 +7,6 @@ $unidades = (int) ($_POST['unidades'] ?? 0);
 
 $producto = getProducto($codProd);
 
-if (!$producto) {
-    header('Location: categorias.php');
-    exit;
-}
-
 if (!isset($_SESSION['carrito'])) {
     $_SESSION['carrito'] = [];
 }

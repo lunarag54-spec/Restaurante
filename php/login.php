@@ -50,33 +50,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <div class="contenedor-global">
-        <div class="imagen-login">
-            <img src="../Image/ibmoon-kim-74zxMOAE_HM-unsplash.webp" alt="Login Image">
-        </div>
-        
-        <div class="div-form-login">
-            <form method="POST" class="login-form">
-                <h2 class="titulo-login">Login</h2>
-                
-                <?php
-                if ($error == true) {
-                    echo '<p class="error-mensaje">USUARIO O CONTRASEÑA INCORRECTOS</p>';
-                }
-                ?>
+    <?php
 
-                <div class="div-input">
-                    <input class="correo" name="Correo" type="email" required placeholder="Email">
-                </div>
+    if ($error == true) {
+        echo 'Error en el login :( Vuelve a intentarlo!';
+    }
 
-                <div class="div-input">
-                    <input class="clave" name="Clave" type="password" required placeholder="Contraseña">
-                </div>
-
-                <button type="submit" class="boton-login">Login</button>
-            </form>
-        </div>
-    </div>
+    ?>
+    <form method="POST">
+        <label>Correo</label>
+        <br>
+        <input name="Correo" type="email" required placeholder="Coreo@dominio.extension">
+        <br>
+        <label>Clave</label>
+        <br>
+        <input name="Clave" type="text" required placeholder="Clave">
+        <br>
+        <br>
+        <button type="submit">Entrar</button>
+    </form>
 </body>
 
 </html>
