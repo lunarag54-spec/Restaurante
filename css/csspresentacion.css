@@ -1,0 +1,362 @@
+/* ====== BODY ====== */
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-image: url("../Image/ibmoon-kim-74zxMOAE_HM-unsplash.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+
+/* ====== TITULO NASÜ ====== */
+.titulo {
+  font-size: 180px;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: transparent;
+  position: relative;
+  opacity: 0;
+  animation: aparecerDerecha 1s ease-out forwards;
+}
+
+.titulo span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Parte superior */
+.titulo span:nth-child(1) {
+  color: white;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  transition: 0.5s;
+}
+
+.titulo:hover span:nth-child(1) {
+  transform: translateY(-18px);
+}
+
+/* Parte inferior */
+.titulo span:nth-child(2) {
+  color: white;
+  clip-path: polygon(0 46%, 100% 50%, 100% 100%, 0 100%);
+  transition: 0.5s;
+}
+
+.titulo:hover span:nth-child(2) {
+  transform: translateY(18px);
+}
+
+/* Banda amarilla central */
+.titulo span:nth-child(3) {
+  top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  background: rgb(255, 219, 17);
+  color: #860808;
+  font-size: 0.1em;
+  font-weight: 500;
+  letter-spacing: 0.4em;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.titulo:hover span:nth-child(3) {
+  transform: translateY(-50%) scaleY(1);
+}
+
+/* Animación de entrada desde la derecha */
+@keyframes aparecerDerecha {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bordeGira {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  25% {
+    clip-path: inset(0 0 100% 0);
+  }
+
+  50% {
+    clip-path: inset(100% 0 0 0);
+  }
+
+  75% {
+    clip-path: inset(0 0 0 100%);
+  }
+
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+/* ====== BOTÓN ====== */
+.btn {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Botón con animación fill desde el fondo */
+.btn-fill-bottom {
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: rgb(253, 253, 253);
+  text-align: center;
+  width: 160px;
+  height: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* Hover: se eleva y agranda */
+.btn-fill-bottom:hover {
+  transform: translateY(-5px) scale(1.15);
+  color: rgb(255, 255, 255);
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Fondo circular que sube al hacer hover */
+.btn-fill-bottom::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 200px;
+  width: 250px;
+  border-radius: 50%;
+  top: 100%;
+  left: 100%;
+  transition: 0.7s;
+}
+
+.btn-fill-bottom:hover::before {
+  top: -40px;
+  left: -40px;
+}
+
+/* Botón verde */
+.btn-fill-bottom--green {
+  color: rgb(84, 187, 108);
+  border: 2px solid rgb(84, 187, 108);
+}
+
+.btn-fill-bottom--green::before {
+  background: rgb(84, 187, 108);
+}
+
+@keyframes loading {
+  0% {
+    clip-path: polygon(0% 100%,
+        0% 0%,
+        100% 0%,
+        100% 50%,
+        50% 50%,
+        100% 50%,
+        100% 100%);
+  }
+
+  12.5% {
+    clip-path: polygon(0% 100%,
+        0% 0%,
+        100% 0%,
+        100% 50%,
+        50% 50%,
+        100% 100%,
+        100% 100%);
+  }
+
+  25% {
+    clip-path: polygon(0% 100%,
+        0% 0%,
+        100% 0%,
+        100% 50%,
+        50% 50%,
+        50% 100%,
+        50% 100%);
+  }
+
+  37.5% {
+    clip-path: polygon(0% 100%,
+        0% 0%,
+        100% 0%,
+        100% 50%,
+        50% 50%,
+        0% 100%,
+        0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 50%,
+        0% 0%,
+        100% 0%,
+        100% 50%,
+        50% 50%,
+        0% 50%,
+        0% 50%);
+  }
+
+  62.5% {
+    clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 50%, 50% 50%, 0% 0%, 0% 0%);
+  }
+
+  75% {
+    clip-path: polygon(50% 0%,
+        50% 0%,
+        100% 0%,
+        100% 50%,
+        50% 50%,
+        50% 0%,
+        50% 0%);
+  }
+
+  87.5% {
+    clip-path: polygon(100% 0%,
+        100% 0%,
+        100% 0%,
+        100% 50%,
+        50% 50%,
+        100% 0%,
+        100% 0%);
+  }
+
+  100% {
+    clip-path: polygon(100% 50%,
+        100% 50%,
+        100% 50%,
+        100% 50%,
+        50% 50%,
+        100% 50%,
+        100% 50%);
+  }
+}
+
+@keyframes loading2 {
+  0% {
+    clip-path: polygon(0% 100%,
+        0% 0%,
+        100% 0%,
+        100% 50%,
+        50% 50%,
+        100% 50%,
+        100% 100%);
+  }
+
+  12.5% {
+    clip-path: polygon(0% 100%,
+        0% 0%,
+        100% 0%,
+        100% 50%,
+        50% 50%,
+        100% 100%,
+        100% 100%);
+  }
+
+  25% {
+    clip-path: polygon(0% 100%,
+        0% 0%,
+        100% 0%,
+        100% 50%,
+        50% 50%,
+        50% 100%,
+        50% 100%);
+  }
+
+  37.5% {
+    clip-path: polygon(0% 100%,
+        0% 0%,
+        100% 0%,
+        100% 50%,
+        50% 50%,
+        0% 100%,
+        0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 50%,
+        0% 0%,
+        100% 0%,
+        100% 50%,
+        50% 50%,
+        0% 50%,
+        0% 50%);
+  }
+
+  62.5% {
+    clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 50%, 50% 50%, 0% 0%, 0% 0%);
+  }
+
+  75% {
+    clip-path: polygon(50% 0%,
+        50% 0%,
+        100% 0%,
+        100% 50%,
+        50% 50%,
+        50% 0%,
+        50% 0%);
+  }
+
+  87.5% {
+    clip-path: polygon(100% 0%,
+        100% 0%,
+        100% 0%,
+        100% 50%,
+        50% 50%,
+        100% 0%,
+        100% 0%);
+  }
+
+  100% {
+    clip-path: polygon(100% 50%,
+        100% 50%,
+        100% 50%,
+        100% 50%,
+        50% 50%,
+        100% 50%,
+        100% 50%);
+  }
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+button[type="submit"] {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+/* Estilo para el mensaje de error */
+body > p {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
