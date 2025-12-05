@@ -56,7 +56,7 @@ body {
 }
 
 .titulo-login {
-  font-size: 32px;
+  font-size: 40px;
   color: #ff6b6b;
   font-weight: 700;
   margin: 0;
@@ -186,7 +186,8 @@ body {
   top: 50%;
   transform: translateY(-50%) scaleY(0);
   background: rgb(255, 219, 17);
-  color: #860808;
+  color: #ff6b6b;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   font-size: 0.1em;
   font-weight: 500;
   letter-spacing: 0.4em;
@@ -259,34 +260,11 @@ body {
 
 /* Botón verde */
 .btn-fill-bottom--green {
-  color: rgb(84, 187, 108);
-  border: 2px solid rgb(84, 187, 108);
+  color: #ff6b6b;
 }
 
 .btn-fill-bottom--green::before {
-  background: rgb(84, 187, 108);
+  background: #ff6b6b;
 }
 
-label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-}
 
-button[type="submit"] {
-    background-color: #5cb85c;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-/* Estilo para el mensaje de error */
-body > p {
-    color: red;
-    font-weight: bold;
-    margin-top: 10px;
-}
