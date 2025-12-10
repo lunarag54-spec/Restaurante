@@ -22,6 +22,6 @@ if (isset($_SESSION['carrito'][$codProd])) {
     ];
 }
 
-header('Location: carrito.php');
+header('Location: categorias.php');
 exit;
 ?>
