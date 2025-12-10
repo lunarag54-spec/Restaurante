@@ -8,6 +8,10 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f7f7f7;
+    background-image: url("../Image/ibmoon-kim-74zxMOAE_HM-unsplash.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: 0;
     padding: 0;
     display: flex;

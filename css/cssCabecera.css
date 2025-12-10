@@ -1,0 +1,82 @@
+/* Estilos de la Cabecera Principal - Versión Suave */
+#cabecera-principal {
+    /* Color más suave */
+    background-color: #f9caca; 
+    padding: 15px 30px;
+    font-family: Arial, sans-serif;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: wrap; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    
+    /* Propiedades para hacerla fija arriba */
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 1000; 
+}
+
+/* Estilos del Logo/Nombre del Restaurante (Cambiamos el color a uno más oscuro para el contraste) */
+.logo h1 {
+    color: #333333; /* Texto oscuro para que resalte sobre el fondo claro */
+    font-size: 24px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Estilos de la Información del Usuario (Cambiamos el color a uno oscuro con fondo sutil) */
+.info-usuario span {
+    font-weight: normal;
+    color: #333333;
+    margin-right: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.05); /* Fondo muy sutil y casi transparente */
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* Estilos de Navegación (Cambiamos el color del texto a oscuro) */
+.menu-navegacion a {
+    text-decoration: none;
+    color: #333333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.2s, color 0.2s;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.menu-navegacion a:hover {
+    background-color: #e5b7b7; /* Un tono más oscuro del pastel al pasar el ratón */
+    color: #333333;
+}
+
+/* Estilo específico para el enlace de "Cerrar sesión" */
+.menu-navegacion .enlace-logout {
+    background-color: #e75463; /* Usamos el rojo original del carrito como énfasis */
+    color: #ffffff; 
+    font-weight: bold;
+}
+
+.menu-navegacion .enlace-logout:hover {
+    background-color: #d84555; 
+    color: #ffffff;
+}
+
+/* Estilo para el enlace del carrito */
+.menu-navegacion .enlace-carrito {
+    background-color: #f0aaaa; /* Un color intermedio para destacar */
+}
+
+.menu-navegacion .enlace-carrito:hover {
+    background-color: #e59999;
+}
+
+/* (Recuerda mantener el padding-top en el body para el contenido) */
+body {
+    padding-top: 70px; 
+    margin: 0;
+}
