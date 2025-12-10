@@ -1,0 +1,71 @@
+/* 1. ESTILOS DEL BODY (Solo centrado del contenedor principal) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7; /* O el color de fondo de tu tema */
+    background-image: url(../Image/ibmoon-kim-74zxMOAE_HM-unsplash.webp);
+     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex; 
+    justify-content: center; /* Centra el .divGeneral horizontalmente */
+    align-items: center;     /* Centra el .divGeneral verticalmente */
+    
+    min-height: 100vh; 
+    margin: 0; 
+}
+
+.divGeneral {
+    display: flex;
+    flex-direction: column; /* Apila los elementos: mensaje encima del botón */
+    align-items: center;    /* Centra los elementos horizontalmente */
+    gap: 30px;              /* Espacio entre el mensaje y el botón */
+    
+    background-color: #FDF9F6;
+    padding: 40px;
+    border: 3px solid;
+    border-color: #E75463;
+    border-radius: 20px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5); 
+    animation: subida 1s ease-out forwards;
+}
+
+/*ESTILOS DEL MENSAJE (Mantener el centrado del texto) */
+.mensajeExito{
+    font-size: 40px;
+    color: #E75463;
+    text-align: center;
+    text-shadow: 3px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.botonVolver {
+    background-color: transparent;
+    color: #E75463;
+    border: 2px solid #E75463;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+.botonVolver a{
+    text-decoration: none;
+    color: #E75463;
+    transition: background-color 0.3s, color 0.3s;
+}
+.botonVolver a:hover{
+    color: white;
+}
+
+.botonVolver:hover {
+    background-color: #E75463;
+}
+
+@keyframes subida {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
