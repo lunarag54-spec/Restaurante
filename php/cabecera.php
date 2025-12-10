@@ -1,26 +1,82 @@
-<?php
-$correo_usuario = htmlspecialchars($_SESSION['usuario']['Correo'] ?? 'ERROR');
+<!DOCTYPE html>
+<html lang="es">
 
-?>
-<div id="cabecera-principal"
-    style="border-bottom: 2px solid #333; padding: 10px 0; margin-bottom: 20px; background-color: #f4f4f4;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabecera de Navegación</title>
 
-    <span style="font-weight: bold; margin-right: 15px;">
-        Usuario: <?php echo $correo_usuario; ?>
-    </span>
+    <style>
+        #cabecera-principal {
+            border-bottom: 2px solid #333;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            background-color: #e75463;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-    | &nbsp;
+        #cabecera-principal span {
+            font-weight: bold;
+            color: #0056b3;
+            margin-right: 15px;
+            padding-right: 15px;
+            border-right: 1px solid #ccc;
+            white-space: nowrap;
+        }
 
-    <a href="categorias.php">Home (Catálogo)</a>
+        #cabecera-principal span:last-child {
+            border-right: none;
+        }
 
-    &nbsp; | &nbsp;
+        #cabecera-principal a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: background-color 0.2s, color 0.2s;
+            margin: 0 5px;
+        }
 
-    <a href="carrito.php">Ver carrito</a>
+        #cabecera-principal a:hover {
+            background-color: #e0e0e0;
+            color: #000;
+        }
 
-    &nbsp; | &nbsp;
+        #cabecera-principal a[href="logout.php"] {
+            color: #c0392b;
+            font-weight: bold;
+        }
 
-    <a href="logout.php">Cerrar sesión</a>
+        #cabecera-principal a[href="logout.php"]:hover {
+            background-color: #c0392b;
+            color: #ffffff;
+        }
+    </style>
+</head>
 
-    &nbsp; |
+<body>
 
-</div>
+    <?php
+    $correo_usuario = htmlspecialchars($_SESSION['usuario']['Correo'] ?? 'Invitado');
+    ?>
+
+    <div id="cabecera-principal">
+
+        <span>
+            Usuario: <?php echo $correo_usuario; ?>
+        </span>
+
+        <a href="categorias.php">Home (Catálogo)</a>
+
+        <a href="carrito.php">Ver carrito</a>
+
+        <a href="logout.php">Cerrar sesión</a>
+    </div>
+
+</body>
+
+</html>
