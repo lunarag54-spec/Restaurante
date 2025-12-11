@@ -1,0 +1,178 @@
+/* Color Rosa Suave de la web: #f9caca (lo convertiremos a RGBA para darle transparencia) */
+body {
+    font-family: Arial, sans-serif;
+    
+    /* 1. Definir la Capa de Color */
+    background-image: 
+        linear-gradient(
+            rgba(249, 202, 202, 0.6), /* Rosa Suave con 60% de opacidad */
+            rgba(249, 202, 202, 0.6)  /* Usar el mismo color para un tinte uniforme */
+        ),
+        
+        /* 2. Definir la Capa de Imagen (Asegúrate que la ruta ../Image/patron.jpg es correcta) */
+        url('../Image/patron.jpg');
+        
+    /* 3. Propiedades necesarias para la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    
+    /* Opcional: Si quieres una transición suave */
+    transition: background-image 0.5s ease-in-out;
+}
+
+/* Estilos para el contenedor de la sección */
+.contenido-catalogo {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto; /* Centrar la sección */
+}
+
+/* Contenedor principal de las categorías (permite scroll vertical normal) */
+.contenedor-categorias {
+    display: flex;
+    flex-direction: column; /* Apila las tarjetas verticalmente (scroll hacia abajo) */
+    gap: 30px; /* Espacio entre cada tarjeta */
+}
+
+/* Estilo base de cada tarjeta (tarjeta entera es un enlace) */
+.card-categoria {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-decoration: none; /* Quitar subrayado del enlace */
+    color: #333333;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding: 20px;
+}
+
+/* Efecto Hover: la tarjeta se eleva ligeramente */
+.card-categoria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos de la imagen */
+.card-imagen-contenedor {
+    flex: 0 0 40%; /* La imagen ocupa el 40% del ancho en escritorio */
+    max-width: 300px;
+    margin-right: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    /* Aplicando drop-shadow a la forma de la imagen PNG */
+    filter:drop-shadow(6px 3px 4px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease-in-out;
+}
+.card-imagen-contenedor:hover {
+    flex: 0 0 40%; /* La imagen ocupa el 40% del ancho en escritorio */
+    max-width: 300px;
+    margin-right: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    /* Efecto de cambio de color de la sombra al pasar el ratón */
+    filter:drop-shadow(6px 3px 4px rgba(255, 1, 1, 0.747)); 
+}
+
+
+.card-imagen {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto Zoom al pasar el ratón sobre la imagen */
+.card-categoria:hover .card-imagen {
+    transform: scale(1.05); 
+}
+
+/* Estilos de la información (texto y botón) */
+.card-info {
+    flex: 1; /* El texto ocupa el resto del espacio */
+    padding: 10px;
+}
+
+.card-titulo {
+    font-size: 26px;
+    color: #e75463; /* Color de énfasis de tu restaurante */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.card-descripcion {
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Estilo del botón 'Acceder' */
+.card-acceso {
+    display: inline-block;
+    background-color: #e75463; 
+    color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+}
+
+.card-acceso:hover {
+    background-color: #d84555;
+}
+
+/* ---------------------------------------------------- */
+/* Responsive: Invertir imagen/texto en categorías pares (opcional) */
+/* ---------------------------------------------------- */
+
+.item-impar {
+    /* Mantiene el orden por defecto: Imagen (izquierda), Texto (derecha) */
+    flex-direction: row;
+}
+
+.item-par {
+    /* Invierte el orden: Texto (izquierda), Imagen (derecha) */
+    flex-direction: row-reverse;
+}
+
+/* ---------------------------------------------------- */
+/* Responsive para Móviles (Menos de 768px) */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+    
+    .contenedor-categorias {
+        gap: 20px;
+    }
+    
+    /* Obligamos a apilar la imagen sobre el texto en móviles */
+    .card-categoria,
+    .item-par,
+    .item-impar {
+        flex-direction: column; /* La imagen va encima del texto */
+        padding: 15px;
+    }
+
+    .card-imagen-contenedor {
+        width: 100%; /* La imagen ocupa el ancho completo */
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px; /* Espacio entre imagen y texto */
+    }
+    
+    .card-info {
+        padding: 0; /* Quitar padding interior innecesario */
+        text-align: center; /* Centrar el texto en móvil */
+    }
+    
+    .card-descripcion {
+        text-align: center;
+    }
+
+    .card-acceso {
+        margin-top: 10px; /* Separación del botón */
+    }
+}
