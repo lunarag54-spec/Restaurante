@@ -10,30 +10,42 @@
 
 <body>
     <?php
-    // Esto simula la obtención del correo del usuario de la sesión
     $correo_usuario = htmlspecialchars($_SESSION['usuario']['Correo'] ?? 'Invitado');
     ?>
 
     <header id="cabecera-principal">
 
         <div class="logo">
-            <h1>Mi Restaurante</h1>
+            <img src="..\Image/Gemini_Generated_Image_sbzxh8sbzxh8sbzx.png" alt="Icono de Restaurante" class="logo-icon">
         </div>
+        
+        <div class="header-right-group">
 
-        <div class="info-usuario">
-            <span>
-                Usuario: **<?php echo $correo_usuario; ?>**
-            </span>
+            <nav class="menu-navegacion">
+                <a href="categorias.php" class="enlace-nav">Home (Catálogo)</a>
+            </nav>
+
+            <div class="utilidades-usuario">
+                
+                <a href="carrito.php" class="enlace-carrito">
+                    <img src="..\Image/carro1.png" alt="Icono de Carrito normal" class="carrito-icon carrito-base">
+    
+                    <img src="..\Image/carro2.png" alt="Icono de Carrito al pasar el ratón" class="carrito-icon carrito-hover">
+
+                    <span class="carrito-texto"> (<span id="contador-carrito">0</span>)</span>
+                </a>
+
+                <div class="info-usuario">
+                    <span>
+                        Usuario: **<?php echo $correo_usuario; ?>**
+                    </span>
+                </div>
+
+                <a href="logout.php" class="enlace-logout">Cerrar sesión</a>
+            </div>
+
         </div>
-
-        <nav class="menu-navegacion">
-            <a href="categorias.php">Home (Catálogo)</a>
-            <a href="carrito.php" class="enlace-carrito">
-                Ver carrito (0) 🛒 </a>
-            <a href="logout.php" class="enlace-logout">Cerrar sesión</a>
-        </nav>
         
     </header>
     </body>
-
 </html>

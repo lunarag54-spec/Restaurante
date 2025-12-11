@@ -1,82 +1,285 @@
-/* Estilos de la Cabecera Principal - Versión Suave */
+/*
+ * Colores:
+ * Fondo Suave: #f9caca
+ * Rojo/Rosa Énfasis: #e75463 (Botones)
+ * Texto Oscuro: #333333
+ */
+
+/* ---------------------------------------------------- */
+/* 1. Estilos Base y Fijo (MODIFICADO para centrado) */
+/* ---------------------------------------------------- */
 #cabecera-principal {
-    /* Color más suave */
-    background-color: #f9caca; 
+    background-color: #fdf8f8; 
     padding: 15px 30px;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     display: flex; 
+    
+    /* La estructura es: [Logo] [Navegación Centrada] [Utilidades Derecha] */
     justify-content: space-between; 
     align-items: center;
-    flex-wrap: wrap; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.3); 
     
-    /* Propiedades para hacerla fija arriba */
     position: fixed; 
     top: 0; 
     width: 100%; 
     z-index: 1000; 
+    box-sizing: border-box; 
 }
 
-/* Estilos del Logo/Nombre del Restaurante (Cambiamos el color a uno más oscuro para el contraste) */
-.logo h1 {
-    color: #333333; /* Texto oscuro para que resalte sobre el fondo claro */
-    font-size: 24px;
+/* Compensación de contenido por la cabecera fija */
+body {
+    padding-top: 75px; 
     margin: 0;
-    white-space: nowrap;
 }
 
-/* Estilos de la Información del Usuario (Cambiamos el color a uno oscuro con fondo sutil) */
-.info-usuario span {
-    font-weight: normal;
+/* ---------------------------------------------------- */
+/* 2. Logo/Título (Lado Izquierdo) */
+/* ---------------------------------------------------- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.logo-icon {
+    width: 60px; 
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* border: 2px solid #e75463; */
+}
+
+.logo h1 {
     color: #333333;
-    margin-right: 20px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.05); /* Fondo muy sutil y casi transparente */
-    font-size: 14px;
-    white-space: nowrap;
+    font-size: 28px; 
+    font-weight: 700;
+    margin: 0;
 }
 
-/* Estilos de Navegación (Cambiamos el color del texto a oscuro) */
-.menu-navegacion a {
+/* ---------------------------------------------------- */
+/* 3. Grupo Derecho (Navegación, Carrito, Usuario) (MODIFICADO para centrado) */
+/* ---------------------------------------------------- */
+.header-right-group {
+    display: flex;
+    align-items: center;
+    
+    /* Espacio para la navegación central */
+    flex-grow: 1; 
+    justify-content: flex-end; 
+    gap: 25px; 
+}
+
+.menu-navegacion {
+    /* Centrado del botón "Home (Catálogo)" */
+    flex-grow: 1; 
+    text-align: center;
+}
+
+.utilidades-usuario {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+/* ---------------------------------------------------- */
+/* 4. Estilos de Enlaces (Menú y Botones) */
+/* ---------------------------------------------------- */
+.menu-navegacion .enlace-nav {
     text-decoration: none;
     color: #333333;
-    padding: 8px 15px;
+    padding: 8px 12px;
     border-radius: 5px;
-    transition: background-color 0.2s, color 0.2s;
-    margin-left: 10px;
+    transition: all 0.2s ease-in-out;
     font-size: 16px;
     font-weight: 500;
+    border-bottom: 2px solid transparent; 
 }
 
-.menu-navegacion a:hover {
-    background-color: #e5b7b7; /* Un tono más oscuro del pastel al pasar el ratón */
+.menu-navegacion .enlace-nav:hover {
+    background-color: transparent;
+    color: #e75463; 
+    border-bottom: 2px solid #e75463; 
+}
+
+/* Enlace del Carrito (MODIFICADO para el hover de imagen) */
+.enlace-carrito {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    background-color: #f0aaaa; 
+    color: #333333;
+    
+    /* CAMBIOS para el hover de imagen: */
+    position: relative; /* Contenedor para superponer iconos */
+    height: 36px; /* Altura fija para centrar el icono */
+    padding: 8px 15px 8px 30px; /* Más padding izquierdo para el icono */
+    box-sizing: border-box;
+
+    border-radius: 20px; 
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.enlace-carrito:hover {
+    background-color: #e59999;
     color: #333333;
 }
 
-/* Estilo específico para el enlace de "Cerrar sesión" */
-.menu-navegacion .enlace-logout {
-    background-color: #e75463; /* Usamos el rojo original del carrito como énfasis */
+/* Estilos de los iconos del carrito (NUEVO) */
+.carrito-icon {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0.2); 
+    
+    /* Posicionamiento y Transición para el efecto hover */
+    position: absolute; 
+    top: 50%;
+    left: 0px; /* Alineado a 10px del borde izquierdo del botón */
+    transform: translateY(-50%); 
+    transition: opacity 0.3s ease-in-out; 
+}
+
+/* Ocultar/Mostrar las dos imágenes (NUEVO) */
+.carrito-base {
+    opacity: 1; /* Se muestra por defecto */
+}
+
+.carrito-hover {
+    opacity: 0; /* Se oculta por defecto */
+    filter: brightness(0.8); /* Opcional: Oscurecer el icono hover para diferenciarlo */
+}
+
+/* Estado HOVER: Oculta la base y muestra la imagen de hover */
+.enlace-carrito:hover .carrito-base {
+    opacity: 0;
+}
+
+.enlace-carrito:hover .carrito-hover {
+    opacity: 1;
+}
+
+/* Ajusta el texto del carrito */
+.carrito-texto {
+    /* El texto debe ir después del espacio reservado para los iconos */
+    margin-left: 0; 
+}
+
+
+/* Enlace de Cerrar Sesión (Botón Destacado) */
+.enlace-logout {
+    background-color: #e75463;
     color: #ffffff; 
     font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.2s, box-shadow 0.2s;
 }
 
-.menu-navegacion .enlace-logout:hover {
+.enlace-logout:hover {
     background-color: #d84555; 
-    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(231, 84, 99, 0.5); 
 }
 
-/* Estilo para el enlace del carrito */
-.menu-navegacion .enlace-carrito {
-    background-color: #f0aaaa; /* Un color intermedio para destacar */
+/* Información del Usuario (discreta) */
+.info-usuario {
+    font-size: 14px;
+    color: #555555;
+    background-color: #f0f0f0; 
+    padding: 5px 10px;
+    border-radius: 3px;
 }
 
-.menu-navegacion .enlace-carrito:hover {
-    background-color: #e59999;
+/* ---------------------------------------------------- */
+/* 5. Diseño Responsive (Mantenido) */
+/* ---------------------------------------------------- */
+
+/* Estilos para móviles y tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Desactivamos el centrado y volvemos a la disposición vertical para móvil */
+    #cabecera-principal {
+        flex-direction: column; 
+        align-items: flex-start;
+        padding: 10px 15px; 
+    }
+
+    .header-right-group {
+        width: 100%;
+        margin-top: 5px;
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 5px;
+        flex-grow: 0; 
+        justify-content: flex-start;
+    }
+    
+    /* 3. Navegación (Home): Ocupa su propia línea superior */
+    .menu-navegacion {
+        width: 100%;
+        margin-bottom: 5px;
+        flex-grow: 0; 
+    }
+
+    .menu-navegacion .enlace-nav {
+        display: block; 
+        text-align: center;
+        padding: 8px 0;
+        border-bottom: 1px solid #f0e0e0;
+        width: 100%;
+        box-sizing: border-box; 
+    }
+
+    /* 4. Utilidades de Usuario: Carrito, Usuario y Cerrar Sesión en una fila */
+    .utilidades-usuario {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap; 
+    }
+    
+    /* Hacemos que los botones ocupen la mitad del espacio cada uno */
+    .enlace-carrito, .enlace-logout {
+        flex: 1 1 45%; 
+        text-align: center;
+        justify-content: center; 
+        box-sizing: border-box;
+    }
+    
+    /* Ocultamos el texto "Usuario:..." en el modo más estrecho para ahorrar espacio */
+    .info-usuario {
+        display: none; 
+    }
+    
+    /* En pantallas muy estrechas, ocultamos el texto del carrito para que solo se vea el icono (más elegante) */
+    .carrito-texto {
+        display: none;
+    }
+    
+    /* Reajustamos el padding del body para que el contenido no quede oculto */
+    body {
+        padding-top: 130px; 
+        margin: 0;
+    }
 }
 
-/* (Recuerda mantener el padding-top en el body para el contenido) */
-body {
-    padding-top: 70px; 
-    margin: 0;
+
+/* ******* MÁS DETALLE PARA MÓVILES EXTREMOS (Ancho de Pantalla Dividida) ******* */
+@media (max-width: 480px) {
+    /* Si el espacio es MÍNIMO, forzamos al carrito y cerrar sesión a apilarse */
+    .utilidades-usuario {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .enlace-carrito, .enlace-logout {
+        flex: 1 1 100%; 
+        margin-bottom: 5px;
+    }
+    
+    body {
+        padding-top: 170px; 
+    }
 }
