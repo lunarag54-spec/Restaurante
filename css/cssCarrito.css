@@ -1,9 +1,4 @@
-/* Paleta de Colores basada en tu login:
-   - Fondo principal/Texto: #4A4A4A (gris oscuro)
-   - Contenedor/Fondo principal: #FDF9F6 (blanco/crema suave)
-   - Título/Botón principal: #E75463 (rojo/rosa salmón)
-   - Borde/Detalles: #F4D3C5 (naranja muy pálido)
-*/
+
 
 body {
     font-family: Arial, sans-serif;
@@ -18,30 +13,29 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: #4A4A4A; /* Texto principal */
-    /* Aquí se asumiría un fondo con imagen similar al login,
-       pero para este archivo solo ponemos un color claro */
+    color: #4A4A4A; /
+   
 }
 
 /* Contenedor principal del carrito (la "tarjeta" central) */
 .container-carrito {
-    background-color: #FDF9F6; /* Blanco/crema suave */
+    background-color: #FDF9F6; 
     padding: 40px;
-    border-radius: 20px; /* Bordes redondeados */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
     width: 90%;
-    max-width: 850px; /* Limita el ancho máximo */
+    max-width: 850px; 
     text-align: center;
 }
 
 .titulo-carrito {
-    color: #E75463; /* Rojo/rosa salmón */
+    color: #E75463; 
     font-size: 2.5em;
     margin-bottom: 30px;
     font-weight: bold;
 }
 
-/* --- Tabla de Carrito --- */
+/* Tabla de Carrito */
 
 .tabla-carrito {
     width: 100%;
@@ -49,18 +43,18 @@ body {
     margin-bottom: 30px;
     background-color: white;
     border-radius: 10px;
-    overflow: hidden; /* Para que el borde redondeado se aplique */
-    border: 1px solid #F4D3C5; /* Borde muy suave */
+    overflow: hidden; 
+    border: 1px solid #F4D3C5; 
 }
 
 .tabla-carrito th, .tabla-carrito td {
     padding: 15px 10px;
     text-align: left;
-    border-bottom: 1px solid #eee; /* Separador de filas */
+    border-bottom: 1px solid #eee;
 }
 
 .tabla-carrito thead th {
-    background-color: #F4D3C5; /* Fondo del encabezado (naranja pálido) */
+    background-color: #F4D3C5; 
     color: #4A4A4A;
     font-weight: bold;
     text-transform: uppercase;
@@ -68,7 +62,7 @@ body {
 }
 
 .tabla-carrito tbody tr:hover {
-    background-color: #FFF8F6; /* Efecto hover en filas */
+    background-color: #FFF8F6; 
 }
 
 .tabla-carrito .carrito-vacio {
@@ -80,9 +74,9 @@ body {
 
 /* Fila de Total */
 .tabla-carrito tfoot tr {
-    border-top: 2px solid #E75463; /* Separador fuerte para el total */
+    border-top: 2px solid #E75463; 
     font-weight: bold;
-    background-color: #FEEEEE; /* Fondo suave para la fila de total */
+    background-color: #FEEEEE; 
 }
 
 .tabla-carrito .total-label {
@@ -96,11 +90,11 @@ body {
     color: #4A4A4A;
 }
 
-/* --- Enlaces de Acción y Botones --- */
+
 
 /* Enlace "Eliminar" */
 .remove-link {
-    color: #E75463; /* Rojo/rosa salmón */
+    color: #E75463; 
     text-decoration: none;
     font-weight: bold;
     transition: color 0.2s;
@@ -121,14 +115,14 @@ body {
 
 /* Botón FINALIZAR PEDIDO (principal) */
 .finish-button {
-    background-color: #E75463; /* Rojo/rosa salmón (color principal) */
+    background-color: #E75463; 
     color: white;
     padding: 12px 25px;
-    border-radius: 50px; /* Borde muy redondeado (pastilla) */
+    border-radius: 50px; 
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s, transform 0.1s;
-    box-shadow: 0 4px 10px rgba(231, 84, 99, 0.4); /* Sombra para resaltar */
+    box-shadow: 0 4px 10px rgba(231, 84, 99, 0.4); 
 }
 
 .finish-button:hover {
@@ -153,7 +147,7 @@ body {
     color: white;
 }
 
-/* Enlace "Volver al catálogo" al pie */
+/* Enlace "Volver al catálogo" */
 .volver-link {
     margin-top: 20px;
 }

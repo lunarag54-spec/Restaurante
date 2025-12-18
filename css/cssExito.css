@@ -1,4 +1,4 @@
-/* 1. ESTILOS DEL BODY (Solo centrado del contenedor principal) */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f7f7f7; /* O el color de fondo de tu tema */
@@ -7,8 +7,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     display: flex; 
-    justify-content: center; /* Centra el .divGeneral horizontalmente */
-    align-items: center;     /* Centra el .divGeneral verticalmente */
+    justify-content: center; 
+    align-items: center;     
     
     min-height: 100vh; 
     margin: 0; 
@@ -16,9 +16,9 @@ body {
 
 .divGeneral {
     display: flex;
-    flex-direction: column; /* Apila los elementos: mensaje encima del botón */
-    align-items: center;    /* Centra los elementos horizontalmente */
-    gap: 30px;              /* Espacio entre el mensaje y el botón */
+    flex-direction: column; 
+    align-items: center;   
+    gap: 30px;              
     
     background-color: #FDF9F6;
     padding: 40px;
@@ -29,7 +29,7 @@ body {
     animation: subida 1s ease-out forwards;
 }
 
-/*ESTILOS DEL MENSAJE (Mantener el centrado del texto) */
+
 .mensajeExito{
     font-size: 40px;
     color: #E75463;

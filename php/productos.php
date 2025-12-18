@@ -21,51 +21,7 @@ require_once 'cabecera.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos - NASÜ</title>
-    <link rel="stylesheet" href="../css/cssCategorias.css"> <style>
-        /* Estilos específicos para la tabla de productos */
-        .contenedor-productos {
-            width: 95%;
-            max-width: 1100px;
-            margin: 40px auto;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th {
-            background-color: #e75463;
-            color: white;
-            padding: 15px;
-            text-align: left;
-        }
-        td {
-            padding: 15px;
-            border-bottom: 1px solid #f9caca;
-        }
-        tr:hover {
-            background-color: rgba(249, 202, 202, 0.2);
-        }
-        .btn-anadir {
-            background-color: #e75463;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .input-unidades {
-            width: 50px;
-            padding: 5px;
-            border: 1px solid #e75463;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/cssProductos.css">
 </head>
 <body>
 
@@ -85,7 +41,6 @@ require_once 'cabecera.php';
             </thead>
             <tbody>
                 <?php foreach ($productos as $prod): 
-                    // Verificación de seguridad para los nombres de las columnas
                     $nombre = $prod['Nombre'] ?? $prod['nombre'] ?? 'Producto';
                     $desc = $prod['Descripcion'] ?? $prod['descripcion'] ?? '';
                     $peso = $prod['Peso'] ?? $prod['peso'] ?? '0';

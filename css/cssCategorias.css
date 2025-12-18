@@ -1,13 +1,10 @@
-/* ====================================================
-   ESTILO MINIMALISTA NASÜ - SIN IMÁGENES
-   ==================================================== */
+
 
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9caca; /* Rosa base */
-    /* Patrón sutil hecho solo con CSS para sustituir la imagen de fondo */
+    background-color: #f9caca; 
     background-image: radial-gradient(#ffffff 0.5px, transparent 0.5px);
     background-size: 20px 20px;
     color: #333;
@@ -25,35 +22,34 @@ body {
     gap: 25px;
 }
 
-/* Tarjeta Estilizada */
 .card-categoria {
     display: flex;
-    flex-direction: column; /* Diseño vertical más moderno */
+    flex-direction: column; 
     background: #ffffff;
     border-radius: 12px;
     text-decoration: none;
     color: inherit;
     padding: 30px;
-    border-left: 8px solid #e75463; /* Detalle de color lateral */
+    border-left: 8px solid #e75463; 
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
-/* Efecto al pasar el ratón */
+
 .card-categoria:hover {
     transform: translateX(10px);
     box-shadow: 0 10px 20px rgba(231, 84, 99, 0.15);
     background-color: #fffafa;
 }
 
-/* Eliminamos el contenedor de imagen del diseño anterior */
+
 .card-imagen-contenedor {
     display: none; 
 }
 
-/* Título de la Categoría */
+
 .card-titulo {
     font-size: 24px;
     color: #e75463;
@@ -63,7 +59,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* Descripción */
+
 .card-descripcion {
     font-size: 16px;
     color: #666;
@@ -72,7 +68,7 @@ body {
     max-width: 80%;
 }
 
-/* Botón "Acceder" minimalista */
+
 .card-acceso {
     align-self: flex-start;
     font-size: 13px;
@@ -90,7 +86,6 @@ body {
     color: #ffffff;
 }
 
-/* Ajuste para móviles */
 @media (max-width: 600px) {
     .contenido-catalogo {
         margin: 20px auto;

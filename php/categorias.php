@@ -1,8 +1,7 @@
 <?php
-// categorias.php (Versión Minimalista adaptada al nuevo CSS)
 require_once 'sesiones.php';
 require_once 'bd.php';
-$categorias = getCategorias(); // Obtiene CodCat, Nombre, Descripcion
+$categorias = getCategorias();
 require_once 'cabecera.php';
 ?>
 
@@ -27,7 +26,6 @@ require_once 'cabecera.php';
                 $nombre_categ = htmlspecialchars($categ['Nombre']);
                 $cod_categ = htmlspecialchars($categ['CodCat']);
                 
-                // Usamos la descripción de la base de datos o una personalizada por código
                 $desc_completa = htmlspecialchars($categ['Descripcion']); 
                 
                 switch ($cod_categ) {
