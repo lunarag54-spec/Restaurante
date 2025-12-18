@@ -2,7 +2,7 @@
 require_once 'sesiones.php';
 require_once 'bd.php';
 
-// Validamos que exista la categoría en la URL para evitar errores
+
 $codCat = $_GET['categoria'] ?? null;
 
 if (!$codCat) {

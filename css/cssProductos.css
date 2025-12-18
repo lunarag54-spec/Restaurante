@@ -1,4 +1,11 @@
-        .contenedor-productos {
+    body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        
+    }       
+       
+       
+       
+       .contenedor-productos {
             width: 95%;
             max-width: 1100px;
             margin: 40px auto;
