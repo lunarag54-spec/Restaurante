@@ -31,8 +31,6 @@
                     <img src="..\Image/carro1.png" alt="Icono de Carrito normal" class="carrito-icon carrito-base">
     
                     <img src="..\Image/carro2.png" alt="Icono de Carrito al pasar el ratón" class="carrito-icon carrito-hover">
-
-                    <span class="carrito-texto"> (<span id="contador-carrito">0</span>)</span>
                 </a>
 
                 <div class="info-usuario">
