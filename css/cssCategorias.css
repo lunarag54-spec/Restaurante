@@ -86,6 +86,7 @@ body {
     color: #ffffff;
 }
 
+
 @media (max-width: 600px) {
     .contenido-catalogo {
         margin: 20px auto;

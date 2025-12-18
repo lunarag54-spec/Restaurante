@@ -55,7 +55,7 @@ body {
 }
 
 
-/* 3. Grupo Derecho (Navegación, Carrito, Usuario) (MODIFICADO para centrado) */
+/* 3. Grupo Derecho (Navegación, Carrito, Usuario) */
 
 .header-right-group {
     display: flex;
