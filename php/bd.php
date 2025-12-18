@@ -5,8 +5,8 @@ function database()
 {
     $host = 'localhost';
     $db = 'restaurante';
-    $user = 'root';
-    $pass = '';
+    $user = 'alex';
+    $pass = '1234';
     $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";

@@ -1,5 +1,9 @@
     body{
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-image: url("../Image/ibmoon-kim-74zxMOAE_HM-unsplash.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
         
     }       
        

@@ -1,13 +1,36 @@
-
-
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9caca; 
-    background-image: radial-gradient(#ffffff 0.5px, transparent 0.5px);
-    background-size: 20px 20px;
     color: #333;
+    background-image: url("../Image/ibmoon-kim-74zxMOAE_HM-unsplash.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card-contenido {
+    display: flex;
+    /* activa flexbox */
+    align-items: center;
+    /* centra verticalmente */
+    justify-content: space-between;
+    /* separa texto e imagen */
+    gap: 20px;
+    /* espacio entre texto e imagen */
+}
+
+.card-info {
+    flex: 1;
+    /* el texto ocupa todo el espacio disponible */
+}
+
+.card-imagen {
+    width: 200px;
+    /* tamaño fijo de la imagen */
+    height: auto;
+    /* mantiene proporción */
+    border-radius: 8px;
 }
 
 .contenido-catalogo {
@@ -24,14 +47,14 @@ body {
 
 .card-categoria {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     background: #ffffff;
     border-radius: 12px;
     text-decoration: none;
     color: inherit;
     padding: 30px;
-    border-left: 8px solid #e75463; 
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-left: 8px solid #e75463;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -46,7 +69,7 @@ body {
 
 
 .card-imagen-contenedor {
-    display: none; 
+    display: none;
 }
 
 
@@ -91,9 +114,11 @@ body {
     .contenido-catalogo {
         margin: 20px auto;
     }
+
     .card-categoria {
         padding: 20px;
     }
+
     .card-descripcion {
         max-width: 100%;
     }
